@@ -1,0 +1,76 @@
+/* Navbar.css */
+
+/* Estilos generales */
+.navbar {
+    background-color: #f2f2f2;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 10px 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .navbar-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .navbar-logo img {
+    height: 30px;
+  }
+  
+  .navbar-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar-menu li {
+    margin-left: 20px;
+  }
+  
+  .navbar-menu a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+  }
+  
+  .navbar-menu a:hover {
+    color: #0066cc;
+  }
+  
+  /* Responsividad: Mostrar menú hamburguesa */
+  @media (max-width: 768px) {
+    .navbar-container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .navbar-menu {
+      flex-direction: column;
+      display: none; /* Oculto por defecto */
+      width: 100%;
+      margin-top: 10px;
+    }
+  
+    .navbar-menu.show {
+      display: flex; /* Mostrar cuando esté activo */
+    }
+  
+    .navbar-menu li {
+      margin: 10px 0;
+    }
+  
+    .navbar-toggle {
+      cursor: pointer;
+      font-size: 20px;
+      background: none;
+      border: none;
+      color: #333;
+      margin-left: auto;
+    }
+  }
+    

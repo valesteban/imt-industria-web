@@ -1,0 +1,180 @@
+body{
+    background: #d1defa;
+    font-family: Roboto,Arial,Microsoft Yahei,\5fae\8f6f\96c5\9ed1,STXihei,\534e\6587\7ec6\9ed1,SimHei,\9ed1\4f53,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+}
+*{
+    text-decoration: none;
+}
+
+.layout{
+    width: 100%; 
+    height: auto;
+
+    display: grid;
+    grid-template-areas:
+        "logo"
+        "nav" 
+        "carousel"
+        "content"
+        "footer"
+    ;
+    /* tamaño de altura de las filas */
+    grid-template-rows: 70px auto auto  auto;
+}
+
+.header{
+    /* background-color: #f2f2f2; */
+    background-color: white;
+    width: 100%;
+    height: 4rem;
+    border-bottom: 1px solid #e5e5e5;
+    grid-area: header;
+    color: #121127;
+    /* color: #333; */
+    padding-left: 1.25rem;
+    align-items: center;
+    padding-right: 1.25rem;
+    font-size: 1rem;
+    font-weight: 500;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    /* background: linear-gradient(90deg,#03228f 10%, #0e73e4 100%); */
+
+    /* border: 2px solid black; */
+    /* text-align: left; */
+
+    /* Se ponen elementos uno al lado del otro */
+    display: flex;
+    justify-content: left;
+    position: fixed;
+
+}
+
+.logo{
+    grid-area: logo;
+    background: linear-gradient(90deg,#03228f 10%, #0e73e4 100%);
+    width: 30px;
+    height: 30px;
+    border-radius: 200px;
+    /* padding: 10px; */
+    margin: 10px;
+
+}
+
+.nav{
+    width: 100%;
+    /* border: 2px solid black; */
+    /* background-color: lightgoldenrodyellow; */    
+}
+
+.nav  ul {
+
+    display: flex; /* Hacer los elementos del menú flexibles */
+    justify-content: center; /* Centrar los elementos horizontalmente */
+    align-items: center; /* Centrar los elementos verticalmente */
+    list-style: none; /* Quitar el estilo de lista por defecto */
+
+}
+
+.nav ul li{
+    padding: 1rem;
+}
+
+.nav .contacto a{
+    background-color: #5A9BD5;
+    padding: 10px 20px 10px 20px ;
+
+}
+
+
+
+/* los enlaces de la nav */
+.nav a{
+    display: block;
+    margin-left: 30px;
+    margin-right: 30px;
+    font-size: 16px;
+    font-weight: lighter;
+    /* color: #333; */
+    color: #121127;
+    font-weight: normal;
+    text-decoration: none;
+    transition: color 0.1s ease;
+}
+
+/* cuando se pae sobre un enlace del nav*/
+.nav a:hover{
+    color:#2a2950; 
+}
+
+.content{
+    grid-area: content; /* Define el área de la cuadrícula (grid) a la que pertenece este elemento. Está asociado al nombre "content" de la plantilla de la cuadrícula definida en la clase ".layout". */
+    /* border: 2px solid transparent; Agrega un borde de 2 píxeles de grosor, sólido, y de color negro alrededor del elemento. */
+    background-color: #f6f7f9; /* Establece un color de fondo gris claro para el área de contenido. */
+
+    display: flex; /* Convierte este elemento en un contenedor flexible (flexbox), lo que permite organizar su contenido de manera dinámica. */
+    flex-flow: row wrap; /* Combina dos propiedades de flexbox:
+    - `row`: Los elementos secundarios se colocarán en una fila horizontal.
+    - `wrap`: Si los elementos secundarios no caben en una sola fila, se moverán automáticamente a la siguiente fila. */
+
+    justify-content: flex-start; /* Alinea los elementos secundarios al inicio del eje principal (horizontalmente, de izquierda a derecha). */
+    
+    align-items: flex-start; /* Alinea los elementos secundarios al inicio del eje transversal (verticalmente, desde la parte superior). */
+}
+
+
+.carousel{
+    position: relative;
+}
+.peli-item{
+    margin: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 6px #ddd;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 25px;
+    padding-right: 25px;
+
+    margin-left: 20px;
+    margin-right: 30px;
+    
+}
+
+/* FOOTER */
+.footer {
+    min-height: 300px;
+    grid-area: footer; /* Define que este elemento pertenece al área de la cuadrícula llamada "footer", según la plantilla de cuadrícula definida en `.layout`. */
+    background-color: #f2f2f2;
+    color: #333;
+    /* background-color: #d1defa; 
+    color: #454545;  */
+    border-top: 1px solid #e5e5e5;/* Agrega una línea superior (borde) de 1 píxel de grosor, sólida, y de color blanco para separar visualmente el pie de página del resto del contenido. */
+    text-align: left; /* Alinea el texto y cualquier contenido del pie de página hacia la izquierda. */
+    line-height: 68px; /* Ajusta la altura de línea a 68 píxeles, lo que proporciona espacio vertical entre las líneas de texto. Esto también ayuda a centrar verticalmente el contenido dentro del pie de página si hay una sola línea de texto. */
+    padding-left: 25px; /* Agrega un espacio interno (padding) de 25 píxeles a la izquierda del contenido, separándolo del borde izquierdo del contenedor. */
+}
+
+.footer a{
+    color: #0b468a;
+    text-decoration: none;
+}
+
+
+@media (max-width:1085px){
+    .content{
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .peli-item{
+        width: 80%;
+    }
+
+    .carousel {
+        height: 200px; /* Ajusta la altura del carrusel en pantallas más pequeñas */
+    }
+}
