@@ -66,6 +66,9 @@ document.addEventListener('DOMContentLoaded', () => {
       areaItem.innerHTML = `<i class="bi bi-arrow-right-circle"></i><span>${area.area}</span>`; // Mostrar solo el nombre del área
       servicesContainer.appendChild(areaItem);
     });
+
+
+    
   });
 
 
