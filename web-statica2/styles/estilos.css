@@ -1,0 +1,779 @@
+
+/* Fonts */
+:root {
+    --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --heading-font: "Raleway",  sans-serif;
+    --nav-font: "Poppins",  sans-serif;
+  }
+  
+  /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
+  :root { 
+    --background-color: #ffffff; /* Background color for the entire website, including individual sections */
+    --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
+    --heading-color: #111111; /* Color for headings, subheadings and title throughout the website */
+    --accent-color: #e03a3c; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+    --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+    --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+    --heading-color2: #556270; /* Color for headings, subheadings and title throughout the website */
+
+  }
+  
+  /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
+  :root {
+    --nav-color: #212529;  /* The default color of the main navmenu links */
+    --nav-hover-color: #e03a3c; /* Applied to main navmenu links when they are hovered over or active */
+    --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
+    --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+    --nav-dropdown-color: #212529; /* Used for navigation links of the dropdown items in the navigation menu. */
+    --nav-dropdown-hover-color: #e03a3c; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  }
+  
+
+
+  /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
+  
+  .light-background {
+    --background-color: #f9f9f9;
+    --surface-color: #ffffff;
+  }
+  
+  .dark-background {
+    --background-color: #1b1b1b;
+    --default-color: #ffffff;
+    --heading-color: #ffffff;
+    --surface-color: #353535;
+    --contrast-color: #ffffff;
+  }
+  
+  /* Smooth scroll */
+  :root {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    color: var(--default-color);
+    background-color: var(--background-color);
+    font-family: var(--default-font);
+    text-decoration:none
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--heading-color);
+    font-family: var(--heading-font);
+  }
+  a {
+    text-decoration: none;
+}
+
+/*--------------------------------------------------------------
+# Definiciones Globales
+--------------------------------------------------------------*/
+.page-title {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  padding: 25px 0;
+  position: relative;
+}
+
+.page-title2 {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 160px 0 80px 0;
+  text-align: center;
+  position: relative;
+}
+.page-title2:before {
+  content: "";
+  background-color: color-mix(in srgb, var(--background-color), transparent 30%);
+  position: absolute;
+  inset: 0;
+}
+
+.page-title h1 {
+  font-size: 28px;
+  font-weight: 300;
+}
+
+.section {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  padding: 60px 0;
+  scroll-margin-top: 100px;
+  overflow: clip;
+}
+
+.section-bg {
+  background-color: transparent;
+  padding: 160px 0;
+  position: relative;
+}
+
+.section-bg:before {
+  content: "";
+  background-color: var(--background-color);
+  position: absolute;
+  bottom: 60px;
+  top: 60px;
+  left: 0;
+  right: 0;
+  transform: skewY(-3deg);
+}
+
+.section-bg .container {
+  position: relative;
+}
+
+
+
+
+@media (max-width: 1199px) {
+
+    section,
+    .section {
+      scroll-margin-top: 66px;
+    }
+  }
+
+/* ------------------------------------------------------------------------ */
+
+/* HEADER   */
+.header {
+    color: var(--default-color);
+    background-color: var(--background-color);
+    padding: 20px 0;
+    transition: all 0.5s;
+    position: relative;
+    z-index: 997 ;
+  }
+
+  .header .logo {
+    line-height: 1;
+  }
+
+  .header .logo h1 {
+    font-size: 32px;
+    margin: 0;
+    font-weight: 700;
+    color: var(--heading-color);
+    color: var(--heading-color2);
+  }
+
+
+
+
+
+
+/* NAV */
+
+/* Navmenu - Desktop */
+@media (min-width: 1200px) {
+    
+    .navmenu {
+      padding: 0;
+    }
+
+    .navmenu ul {
+        margin: 0;
+
+
+        display: flex;
+        list-style: none;
+        align-items: center;
+    }
+    .navmenu li {
+        position: relative;
+    }
+    
+    .navmenu a {
+        color: var(--nav-color);
+        padding: 18px 15px;
+        font-size: 16px;
+        font-family: var(--nav-font);
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        white-space: nowrap;
+        transition: 0.3s;
+        
+    }
+    
+    .navmenu a i{
+      font-size: 12px;
+      line-height: 0;
+      margin-left: 5px;
+      transition: 0.3s;
+    }
+
+    .navmenu li:hover>a{
+        color: var(--nav-hover-color);
+    }
+
+
+
+}
+
+
+/* Navmenu - Mobile */
+@media (max-width: 1199px) {
+    #container-header{
+        display: flex; /* Esto activa el modelo Flexbox */
+        justify-content: space-between; /* Distribuye los elementos al máximo a la izquierda y derecha */
+        width: 100%;
+      }
+    .mobile-nav-toggle {
+        color: var(--nav-color);
+        font-size: 28px;
+        line-height: 0;
+        margin-right: 20px;
+        cursor: pointer;
+        transition: color 0.3s;
+
+      }
+      .navmenu {
+        padding: 0;
+        z-index: 9997;
+
+      }
+      
+    .navmenu ul {
+        /* background-color: rgba(0, 128, 0, 0.5); Verde con 50% de transparencia */
+
+        display: none;
+        list-style: none;
+        position: absolute;
+        inset: 60px 20px 20px 20px;
+        padding: 10px 0;
+        margin: 0;
+        border-radius: 6px;
+        background-color: var(--nav-mobile-background-color);
+        overflow-y: auto;
+        transition: 0.3s;
+        z-index: 9998;
+        box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+    }
+    .navmenu a{
+      color: var(--nav-dropdown-color);
+      padding: 10px 20px;
+      font-family: var(--nav-font);
+      font-size: 17px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      white-space: nowrap;
+      transition: 0.3s;
+    }
+
+    .navmenu a:hover {
+      color: var(--nav-dropdown-hover-color);
+    }
+
+    .mobile-nav-active {
+        overflow: hidden;
+      }
+
+      .mobile-nav-active .mobile-nav-toggle {
+        color: #fff;
+        position: absolute;
+        font-size: 32px;
+
+        top: 15px;
+        right: 15px;
+        margin-right: 0;
+        z-index: 9999;
+      }
+      .mobile-nav-active .navmenu {
+        position: fixed;
+        overflow: hidden;
+        inset: 0;
+        background: rgba(33, 37, 41, 0.8);
+        transition: 0.3s;
+      }
+      .mobile-nav-active .navmenu>ul {
+        display: block;
+      }
+     .navmenu i{
+        text-align: center;
+
+     }
+
+
+
+  }
+
+/* IMAGEN INICIAL */
+
+.ini-img-section {
+    --default-color: #ffffff;
+    --background-color: #000000;
+    --heading-color: #ffffff;
+    width: 100%;
+    min-height: calc(100vh - 100px);
+    position: relative;
+    padding: 80px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--default-color);
+  }
+
+.ini-img-section img{
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.ini-img-section:before {
+    content: "";
+    background: color-mix(in srgb, var(--background-color), transparent 70%);
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+  }
+  
+  .ini-img-section .container {
+    position: relative;
+    z-index: 3;
+  }
+  .ini-img-section h2 {
+    margin: 0;
+    font-size: 48px;
+    font-weight: 700;
+  }
+
+  .ini-img-section p {
+    color: color-mix(in srgb, var(--default-color), transparent 20%);
+    margin: 10px 0 0 0;
+    font-size: 24px;
+  }
+
+  @media (max-width: 768px) {
+    .ini-img-section h2 {
+      font-size: 32px;
+    }
+  
+    .ini-img-section p {
+      font-size: 18px;
+    }
+  }
+
+
+/*--------------------------------------------------------------
+  ABOUT INDEX
+-----------------------------------------------------------------*/
+.about-index .about .content h3 {
+  font-weight: 700;
+  font-size: 34px;
+  margin-bottom: 30px;
+}
+.about-index .content p {
+  margin-bottom: 30px;
+}
+
+
+.about-index .content .about-btn {
+  padding: 8px 30px 9px 30px;
+  color: var(--default-color);
+  border-radius: 50px;
+  transition: 0.3s;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  border: 2px solid var(--accent-color);
+}
+
+
+.about-index .content .about-btn i {
+  font-size: 16px;
+  padding-left: 5px;
+}
+
+
+.about-index .content .about-btn:hover {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.about-index .icon-box i {
+  font-size: 40px;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.about-index .icon-box h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+}
+
+.about-index .icon-box h4 a {
+  color: var(--heading-color);
+  transition: 0.3s;
+}
+
+.about-index .icon-box p {
+  font-size: 15px;
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  margin-bottom: 0;
+}
+
+.about-index .icon-box:hover h4 a {
+  color: var(--accent-color);
+}
+
+
+/*--------------------------------------------------------------
+  ABOUT 
+-----------------------------------------------------------------*/
+
+
+.about-us .about-us-item {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  padding: 40px 10px;
+  position: relative;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+@media (max-width: 640px) {
+  .about-us .about-us-item+.about-us-item {
+    margin-top: 40px;
+  }
+}
+
+.about-us .about-us-item h3 {
+  /* font-weight: 700; */
+  font-size: 26px;
+}
+
+.about-us .about-us-item p:last-child {
+  margin-bottom: 0;
+}
+
+/* SERVICIOS */
+
+.services .service-item {
+  background-color: var(--surface-color);
+  padding: 30px;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  transition: 0.3s;
+}
+
+.services .service-item .icon {
+  font-size: 36px;
+  line-height: 0;
+  margin-right: 30px;
+  color: var(--accent-color);
+}
+
+.services .service-item .title {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.services .service-item .title a {
+  color: var(--heading-color);
+}
+
+.services .service-item .description {
+  line-height: 24px;
+  font-size: 14px;
+  margin: 0;
+}
+
+.services .service-item:hover {
+  border-color: var(--accent-color);
+}
+
+.services .service-item:hover .title a {
+  color: var(--accent-color);
+}
+
+
+
+/*--------------------------------------------------------------
+# DETALLES DE LOS SERVICIOS
+--------------------------------------------------------------*/
+.service-details .service-box {
+  background-color: var(--surface-color);
+  padding: 20px;
+  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
+}
+.service-details .service-box+.service-box {
+  margin-top: 30px;
+}
+
+
+.service-details .service-box h4 {
+  font-size: 20px;
+  font-weight: 700;
+  border-bottom: 2px solid color-mix(in srgb, var(--default-color), transparent 92%);
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.service-details .services-list {
+  background-color: var(--surface-color);
+}
+
+.service-details .services-list a {
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  background-color: color-mix(in srgb, var(--default-color), transparent 96%);
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  margin-top: 15px;
+  transition: 0.3s;
+}
+
+.service-details .services-list a:first-child {
+  margin-top: 0;
+}
+
+.service-details .services-list a i {
+  font-size: 16px;
+  margin-right: 8px;
+  color: var(--accent-color);
+}
+
+.service-details .services-list a.active {
+  color: var(--contrast-color);
+  background-color: var(--accent-color);
+}
+
+.service-details .services-list a.active i {
+  color: var(--contrast-color);
+}
+
+.service-details .services-list a:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 95%);
+  color: var(--accent-color);
+}
+
+.service-details .download-catalog a {
+  color: var(--default-color);
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  transition: 0.3s;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.service-details .download-catalog a:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.service-details .download-catalog a:last-child {
+  padding-bottom: 0;
+}
+
+.service-details .download-catalog a i {
+  font-size: 24px;
+  margin-right: 8px;
+  color: var(--accent-color);
+}
+
+.service-details .download-catalog a:hover {
+  color: var(--accent-color);
+}
+
+.service-details .help-box {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  margin-top: 30px;
+  padding: 30px 15px;
+}
+
+.service-details .help-box .help-icon {
+  font-size: 48px;
+}
+
+.service-details .help-box h4,
+.service-details .help-box a {
+  color: var(--contrast-color);
+}
+
+.service-details .services-img {
+  margin-bottom: 20px;
+}
+
+.service-details h3 {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.service-details p {
+  font-size: 15px;
+}
+
+.service-details ul {
+  list-style: none;
+  padding: 0;
+  font-size: 15px;
+}
+
+.service-details ul li {
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+}
+
+.service-details ul i {
+  font-size: 20px;
+  margin-right: 8px;
+  color: var(--accent-color);
+}
+
+
+
+/*--------------------------------------------------------------
+# CONTACTO
+--------------------------------------------------------------*/
+.contact .info-item+.info-item {
+  margin-top: 40px;
+}
+
+.contact .info-item i {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  font-size: 20px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  transition: all 0.3s ease-in-out;
+  margin-right: 15px;
+}
+
+.contact .info-item h3 {
+  font-size: 20px;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.contact .info-item p {
+  padding: 0;
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+.contact .php-email-form {
+  height: 100%;
+}
+
+.contact .php-email-form input[type=text],
+.contact .php-email-form input[type=email],
+.contact .php-email-form textarea {
+  font-size: 14px;
+  padding: 10px 15px;
+  box-shadow: none;
+  border-radius: 0;
+  color: var(--default-color);
+  background-color: color-mix(in srgb, var(--background-color), transparent 50%);
+  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
+}
+
+.contact .php-email-form input[type=text]:focus,
+.contact .php-email-form input[type=email]:focus,
+.contact .php-email-form textarea:focus {
+  border-color: var(--accent-color);
+}
+
+.contact .php-email-form input[type=text]::placeholder,
+.contact .php-email-form input[type=email]::placeholder,
+.contact .php-email-form textarea::placeholder {
+  color: color-mix(in srgb, var(--default-color), transparent 70%);
+}
+
+.contact .php-email-form button[type=submit] {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  border: 0;
+  padding: 10px 30px;
+  transition: 0.4s;
+  border-radius: 4px;
+}
+
+.contact .php-email-form button[type=submit]:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+}
+
+
+/* FOOTER */
+
+.footer {
+    color: var(--default-color);
+    background-color: var(--background-color);
+    font-size: 14px;
+    padding-bottom: 50px; 
+    padding-top: 10px;
+    position: relative;
+    z-index: 998;
+
+  }
+
+.footer .copyright {
+    padding-bottom: 25px;
+    border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+.footer .copyright p {
+    margin-bottom: 0;
+}
+/*   --------------------------------------------------------------
+# CLIENTES 
+----------------------------------------------------------------*/
+
+.clients {
+  padding: 20px 0;
+}
+
+.clients .client-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+
+.clients .client-logo img {
+  padding: 20px 40px;
+  max-width: 90%;
+  transition: 0.3s;
+  opacity: 0.8;
+  /* filter: grayscale(100); */
+}
+
+
+.clients .client-logo img:hover {
+  filter: none;
+  opacity: 1;
+}
+
+@media (max-width: 640px) {
+  .clients .client-logo img {
+    padding: 20px;
+  }
+}
+
