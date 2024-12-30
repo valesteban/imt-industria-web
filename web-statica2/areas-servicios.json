@@ -1,0 +1,41 @@
+{
+    "empresa": "IMT SPA",
+    "areas_de_trabajo": [
+      {
+        "area": "Telecomunicaciones",
+        "servicios": [
+          "Montaje y puesta en marcha de sitios Wireless (IPRAN, MM.OO, RAN)",
+          "Clean Up y Desmantelamiento 2G",
+          "Site survey TSS",
+          "Obras Civiles Menores",
+          "Redes de Fibra Óptica (verticales, anillos y redes GPON)",
+          "Redes de Datos",
+          "Representación de equipamiento EXFO y otras marcas"
+        ]
+      },
+      {
+        "area": "Seguridad Industrial",
+        "servicios": [
+          "Sistemas Contra Incendio (detección y extinción)",
+          "Sistemas de Control de Acceso",
+          "Sistemas de CCTV"
+        ]
+      },
+      {
+        "area": "Minería",
+        "servicios": [
+          "Redes de Datos y Fibra Óptica (FO)",
+          "Seguridad Industrial",
+          "Sistemas de Energía Fotovoltaica"
+        ]
+      },{
+        "area": "Area 4",
+        "servicios": [
+          "Servicio 1",
+          "Servicio 2",
+          "Servicio 3"
+        ]
+
+        }
+    ]   
+}   
